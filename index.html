@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<!-- __V3D_PUZZLES__ - enable Puzzles button in the App Manager -->
+<!-- __V3D_TEMPLATE__ - template-based file; delete this line to prevent this file from being updated -->
+<html lang="en">
+
+<head>
+  <title>Identification and Quantification of Nitrosamine impurities </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <!-- Search Engines -->
+  <meta name="description"
+    content="Interactive 3D Web application made with Verge3D. Immerse yourself in amazing graphics experience offered by state-of-the WebGL and HTML5 technologies.">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Verge3D Web Interactive">
+  <meta name="twitter:description"
+    content="Interactive 3D Web application made with Verge3D. Immerse yourself in amazing graphics experience offered by state-of-the WebGL and HTML5 technologies.">
+  <meta name="twitter:image:src" content="https://cdn.soft8soft.com/images/player_socials.jpg">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Verge3D Web Interactive">
+  <meta property="og:description"
+    content="Interactive 3D Web application made with Verge3D. Immerse yourself in amazing graphics experience offered by state-of-the WebGL and HTML5 technologies.">
+  <meta property="og:image" content="https://cdn.soft8soft.com/images/player_socials.jpg">
+  <meta property="og:type" content="website">
+
+  <meta name="generator" content="Verge3D 3.6.1">
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-32x32.ico">
+  <link rel="manifest" href="media/manifest.json">
+  <link rel="mask-icon" href="media/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/HelveticaNeue.css">
+  <link rel="stylesheet" href="assets/css/HelveticaNeueBold.css">
+  <link rel="stylesheet" href="assets/css/HelveticaNeueItalic.css">
+  <link rel="stylesheet" href="assets/css/HelveticaNeueLight.css">
+  <link rel="stylesheet" href="assets/css/HelveticaNeueMedium.css">
+  <link rel="stylesheet" href="assets/css/HelveticaNeueThin.css">
+  <link rel="stylesheet"
+    href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+  <meta name="theme-color" content="#ffffff">
+
+
+
+  <script src="v3d.js"></script>
+  <script src="Thermo_Nitrosomaine_26th_Feb_2020.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="Thermo_Nitrosomaine_26th_Feb_2020.css">
+</head>
+
+<body>
+  <div id="v3d-container">
+
+    <!-- StartPage Div-->
+    <div id="startPage"
+      style="color: var(--white);text-align: center;background: url(&quot;assets/img/Group%20214.png&quot;) no-repeat;background-size: cover;">
+      <div class="container" style="width: 100%;height: 100vh;">
+        <div id="wrapper">
+          <div class="row">
+            <div class="col col-12" id="heading_name" style="text-align: center;">
+              <h1 style="font-size: 3.5em;font-family: HelveticaNeueBold;"><strong>Labatar Virtual Lab</strong><br></h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8 offset-2 equal_spacing" id="logo"><img class="img-fluid" style="max-width: 80%;"
+                src="assets/img/logo.svg"></div>
+          </div>
+          <div class="row">
+            <div class="col col-12 equal_spacing" id="title_name">
+              <h3 style="font-size: 36px;font-weight: lighter;font-family: HelveticaNeueThin;">Identification and
+                Quantification of<br><strong style="font-family: 'HelveticaNeueMedium';">Nitrosamine
+                  impurities</strong><br></h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-8 offset-2 equal_spacing"><button class="btn btn-primary" id="start_experience_btn"
+                type="button"
+                style="color: #e71316;background: #ffffff;border-style: none;border-radius: 0PX;padding: 3% 6%;font-size: 24px;font-family: HelveticaNeueMedium;">Start
+                Experience</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Page loader Div-->
+
+    <!-- <div id="loader_container">
+      <div id="loader_container_inner">
+        <div class="loader"></div>
+      </div>
+      <div id="loaderText">Loading 0%</div>
+    </div> -->
+
+    <!--Loading Page Div-->
+    <div id="LoadingPage" class="container-fluid">
+        <div id="content">
+          <div class="text_block">
+            <p>Let us prepare <br><span style="color: #E71316; font-family:'HelveticaNeueBold' ;">the sample now.</span></p>
+            <div id="text_Loading">Loading <span id="loaderText" style="color: #00677F; font-family:'HelveticaNeueBold'">0%</span></div>
+            <button id="begin_btn">Begin</button>
+            <img src="assets/img/background_shape.svg" alt="">
+          </div>
+          
+        </div>
+    </div>
+
+
+
+
+    <!--Buttons-->
+
+
+    <div id="volume_btn" title="Toggle Volume"></div>
+    <div id="fullscreen_button" class="fullscreen-button fullscreen-open" title="Toggle fullscreen mode"></div>
+    <div class="btns">
+      <!-- <button id="button_overview" class="button_label">Overview</button>
+    <button id="button_SamplePrep" class="button_label">Sample Preparation</button>
+    <button id="button_SamplePrepAndDetec" class="button_label mar">Sample Separation and Detection </button>
+    <button id="button_DataAnalysis" class="button_label mar">Data Analysis and Interpretation</button> -->
+    </div>
+    <!--Labels here-->
+    <div id="Vanquish_label" class="hotspot" style="visibility: hidden;">
+      <div class="hotspot_info doubleLine">
+        <p>Thermo Scientific™ Vanquish™ Flex UHPLC System</p>
+      </div>
+      <div id="Vanquish_label_dash" class="dashLines"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div id="Centrifuge_label" class="hotspot" style="visibility: hidden;">
+      <div class="hotspot_info doubleLine">
+        <p>Thermo Scientific™ Pro Centrifuge Series</p>
+      </div>
+      <div id="Centrifuge_label_dash" class="dashLines"></div>
+      <div class="dot doubleLine_dot"></div>
+    </div>
+
+    <div id="Quantis_label" class="hotspot hotspot_DoubleLine" style="visibility: hidden;">
+      <div class="hotspot_info doubleLine">
+        <p>Thermo Scientific™ TSQ Quantis™ Triple Quadrupole Mass Spectrometer</p>
+      </div>
+      <div id="Quantis_label_dash" class="dashLines"></div>
+      <div class="dot doubleLine_dot"></div>
+    </div>
+
+    <!-- <div id="Screwtop_label" class="hotspot hotspot_DoubleLine">
+      <div class="hotspot_info doubleLine">
+        <p>Thermo Scientific™ Screwtop HPLC Vial</p>
+      </div>
+      <div id="Screwtop_label_dash" class="dashLines"></div>
+      <div class="dot doubleLine_dot"></div>
+    </div>  -->
+
+    <!-- <div id="Mortar_label" class="hotspot hotspot_SingleLine">
+      <div class="hotspot_info singleLine">
+        <p>Mortar and Pestle</p>
+      </div>
+      <div id="Mortar_label_dash" class="dashLines"></div>
+      <div class="dot singleLine_dot"></div>
+    </div> -->
+
+    <div id="Chromeleon_label" class="hotspot hotspot_DoubleLine" style="visibility: hidden;">
+      <div class="hotspot_info doubleLine">
+        <p>Thermo Scientific™ Chromeleon™ CDS Software</p>
+      </div>
+      <div id="Chromeleon_label_dash" class="dashLines"></div>
+      <div class="dot doubleLine_dot"></div>
+    </div>
+
+    <div id="Drug_label" class="hotspot hotspot_SingleLine" style="visibility: hidden;">
+      <div class="hotspot_info singleLine">
+        <p>Drug Substance</p>
+      </div>
+      <div id="Drug_label_dash" class="dashLines"></div>
+      <div class="dot singleLine_dot"></div>
+    </div>
+
+    <!-- <div id="C_Drug_label" class="hotspot hotspot_SingleLine">
+      <div class="hotspot_info singleLine">
+        <p>Crushed Drug Product</p>
+      </div>
+      <div id="C_Drug_label_dash" class="dashLines"></div>
+      <div class="dot singleLine_dot"></div>
+    </div> -->
+
+    <div id="Nunc_label" class="hotspot hotspot_DoubleLine" style="visibility: hidden;">
+      <div class="hotspot_info tripleLine">
+        <p>Thermo Scientific™ Nunc 15mL Conical Sterile Polypropylene Centrifuge Tubes</p>
+      </div>
+      <div id="Nunc_label_dash" class="dashLines"></div>
+      <div class="dot doubleLine_dot"></div>
+    </div>
+
+    <div id="Mobile_label" class="hotspot hotspot_SingleLine" style="visibility: hidden;">
+      <div id="Mobile_label_dash" class="dashLines"></div>
+      <div class="hotspot_info singleLine" style="top: -100%;left: -75%;position: absolute;z-index: 2;">
+        <p>Mobile Phase</p>
+      </div>
+      <div class="dot singleLine_dot"></div>
+    </div>
+
+    <div id="Finnpipette_label" class="hotspot hotspot_DoubleLine" style="visibility: hidden;">
+      <div class="hotspot_info doubleLine">
+        <p>Thermo Scientific™ Finnpipette™ F1 Variable Volume Pipette</p>
+      </div>
+      <div id="Finnpipette_label_dash" class="dashLines"></div>
+      <div class="dot doubleLine_dot"></div>
+    </div>
+
+    <div id="Digital_label" class="hotspot hotspot_DoubleLine" style="visibility: hidden;">
+      <div class="hotspot_info doubleLine">
+        <p>Thermo Scientific™ Digital Vortex Mixer</p>
+      </div>
+      <div id="Digital_label_dash" class="dashLines"></div>
+      <div class="dot doubleLine_dot"></div>
+    </div>
+
+    <div id="Orbital_label" class="hotspot hotspot_DoubleLine" style="visibility: hidden;">
+      <div class="hotspot_info doubleLine">
+        <p>Thermo Scientific™ Solaris™ 2000 and 4000 Orbital Shaker</p>
+      </div>
+      <div id="Orbital_label_dash" class="dashLines"></div>
+      <div class="dot doubleLine_dot"></div>
+    </div>
+
+    <!-- <div id="Injection_label" class="hotspot hotspot_SingleLine">
+      <div class="hotspot_info singleLine">
+        <p>Injection</p>
+      </div>
+      <div id="Injection_label_dash" class="dashLines"></div>
+      <div class="dot singleLine_dot"></div>
+    </div> -->
+
+    <div id="Titan_label" class="hotspot hotspot_DoubleLine" style="visibility: hidden;">
+      <div class="hotspot_info doubleLine">
+        <p>Thermo Scientific™ Titan3 PVDF 0.22µm Syringe Filter </p>
+      </div>
+      <div id="Titan_label_dash" class="dashLines"></div>
+      <div class="dot doubleLine_dot"></div>
+    </div>
+    <div id="Blank_label" class="hotspot hotspot_SingleLine" style="visibility: hidden;">
+      <div id="Blank_label_dash" class="dashLines"></div>
+      <div class="hotspot_info singleLine" style="top: -14%;left: -75%;position: absolute;z-index: 2;">
+        <p>Blank</p>
+      </div>
+      <div class="dot singleLine_dot"></div>
+    </div>
+    <div id="Substance_label" class="hotspot hotspot_SingleLine" style="visibility: hidden;">
+      <div class="hotspot_info singleLine">
+        <p>Drug Product</p>
+      </div>
+      <div id="Substance_label_dash" class="dashLines"></div>
+      <div class="dot singleLine_dot"></div>
+    </div>
+    <div id="Substance_label_v21" class="hotspot hotspot_SingleLine" style="visibility: hidden;">
+      <div id="Substance_label_dash_v21" class="dashLines"></div>
+      <div class="hotspot_info singleLine" style="top: -21%;left: -75%;position: absolute;z-index: 2;">
+        <p>Drug Product</p>
+      </div>
+      <div class="dot singleLine_dot"></div>
+    </div>
+
+    <div id="Substance_label_v31" class="hotspot hotspot_SingleLine" style="visibility: hidden;">
+      <div id="Substance_label_dash_v31" class="dashLines"></div>
+      <div class="hotspot_info singleLine" style="top: -10%;left: -75%;position: absolute;z-index: 2;">
+        <p>Drug Substance</p>
+      </div>
+      <div class="dot singleLine_dot"></div>
+    </div>
+
+    <div id="Drug_label_v3" class="hotspot hotspot_SingleLine" style="visibility: hidden;">
+      <div class="hotspot_info singleLine">
+        <p>Drug Product</p>
+      </div>
+      <div id="Drug_label_dash_v3" class="dashLines"></div>
+      <div class="dot singleLine_dot"></div>
+    </div>
+
+    <div id="Drug_label_v21" class="hotspot hotspot_SingleLine" style="visibility: hidden;">
+      <div id="Drug_label_dash_v21" class="dashLines"></div>
+      <div class="hotspot_info singleLine" style="top: -10%;left: -75%;position: absolute;z-index: 2;">
+        <p>Drug Substance</p>
+      </div>
+      <div class="dot singleLine_dot"></div>
+    </div>
+
+
+    <div id="Blank_label_v2" class="hotspot hotspot_SingleLine" style="visibility: hidden;">
+      <div class="hotspot_info singleLine">
+        <p>Blank</p>
+      </div>
+      <div id="Blank_label_dash_v2" class="dashLines"></div>
+      <div class="dot singleLine_dot"></div>
+    </div>
+
+    <div id="Standard_label" class="hotspot hotspot_SingleLine" style="visibility: hidden;">
+      <div id="Standard_label_dash" class="dashLines"></div>
+      <div class="hotspot_info singleLine" style="top: -21%;left: -80%;position: absolute;z-index: 2;">
+        <p>Standard Solution</p>
+      </div>
+      <div class="dot singleLine_dot"></div>
+    </div>
+
+    <!--Instructions here-->
+
+    <div id="syringe_instruction" class="hotspot inst_SingleLine" style="visibility: hidden;">
+      <div class="instruction_info doubleLine">
+        <p>Click on injection</p>
+      </div>
+      <div class="dashLines_inst"></div>
+      <div class="arrow"></div>
+    </div>
+
+    <div id="vial_instruction" class="hotspot inst_SingleLine" style="visibility: hidden;">
+      <div class="instruction_info doubleLine">
+        <p>Click on drug product vial</p>
+      </div>
+      <div class="dashLines_inst"></div>
+      <div class="arrow"></div>
+    </div>
+
+    <!-- <div id="drug_instruction" class="hotspot inst_SingleLine">
+      <div class="instruction_info doubleLine">
+        <p>Click on drug substance vial</p>
+      </div>
+      <div class="dashLines_inst"></div>
+      <div class="arrow"></div>
+    </div> -->
+
+    <div id="finnpipette_instruction" class="hotspot inst_SingleLine" style="visibility: hidden;">
+      <div class="instruction_info doubleLine">
+        <p>Click on finnpipette pipette</p>
+      </div>
+      <div class="dashLines_inst"></div>
+      <div class="arrow"></div>
+    </div>
+
+    <div id="autosampler_instruction" class="hotspot inst_SingleLine" style="visibility: hidden;">
+      <div class="instruction_info doubleLine">
+        <p>Click on the Vanquish door</p>
+      </div>
+      <div class="dashLines_inst"></div>
+      <div id="animate">
+        <div class="arrow"></div>
+      </div>
+    </div>
+
+    <!-- <div id="substance_instruction" class="hotspot inst_SingleLine">
+      <div class="instruction_info doubleLine">
+          <p>Click on drug substance centrifuge tube</p>
+      </div>
+      <div class="dashLines_inst"></div>
+      <div class="arrow"></div>
+    </div> -->
+
+    <div id="product_instruction" class="hotspot inst_SingleLine" style="visibility: hidden;">
+      <div class="instruction_info doubleLine">
+        <p>Click on drug product centrifuge tube</p>
+      </div>
+      <div class="dashLines_inst"></div>
+      <div class="arrow"></div>
+    </div>
+
+    <div id="shaker_instruction" class="hotspot inst_SingleLine" style="visibility: hidden;">
+      <div class="instruction_info doubleLine">
+        <p>Click on drug product centrifuge tube</p>
+      </div>
+      <div class="dashLines_inst"></div>
+      <div class="arrow"></div>
+    </div>
+
+    <!--Vanquish USP's-->
+    <div id="Vanquish_description">
+      <div class="label_heading">Vanquish™ Flex UHPLC System</div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>High pressure</p>
+      </div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>Fast, accurate results</p>
+      </div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>Unmatched retention time</p>
+      </div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>Lowest baseline noise</p>
+      </div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>Accurate injection</p>
+      </div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>Reproducibility</p>
+      </div>
+    </div>
+
+    <!--Chromeleon™ CDS Software USP's-->
+    <div id="Chromeleon_description">
+      <div class="label_heading">Chromeleon™ CDS Software</div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>21 CFR part 11 compliant</p>
+      </div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>Superior compliance tools</p>
+      </div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>Networking capabilities</p>
+      </div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>Instrument control</p>
+      </div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>Automation</p>
+      </div>
+      <div class="gradientLabel"><img src="assets/img/Circle Ok.svg" alt="">
+        <p>Data processing</p>
+      </div>
+    </div>
+
+    <!--Acknowledgement Labels-->
+    <div id="mixing_ack_label" class="ack_labels">
+      <p>Mixing complete</p>
+      <img src="assets/img/completed.svg" alt="">
+    </div>
+    <div id="transfer_ack_label" class="ack_labels">
+      <p>Drug product is transfered</p>
+      <img src="assets/img/completed.svg" alt="">
+    </div>
+    <div id="homogenized_ack_label" class="ack_labels">
+      <p>Mixture is homogenized</p>
+      <img src="assets/img/completed.svg" alt="">
+    </div>
+    <div id="Autosampler_ack_label" class="ack_labels">
+      <p>Sample tray is ready</p>
+      <img src="assets/img/completed.svg" alt="">
+    </div>
+
+    
+<!-- Table label -->
+<!-- <div id="SP_label" style="visibility: hidden;">
+  <div class="circle-ripple"></div>
+</div> -->
+<div id="DA_label" style="visibility: hidden;">
+  <div class="circle-ripple"></div>
+</div>
+<div id="SD_label" style="visibility: hidden;">
+  <div class="circle-ripple"></div>
+</div>
+<div id="SP_label" style="visibility: hidden;">
+  <p>Click to begin</p>
+  <div class="circle-ripple"></div>
+</div>
+
+
+    <!--product page-->
+    <div id="product_pg">
+      <div class="container-fluid" style="padding: 0px 0px;">
+        <div class="row" style="text-align: center; color: #E71316;">
+          <div class="col-10 offset-1">
+            <h1 style="font-family:HelveticaNeueBold; margin-top:25px; font-size: 1.5rem;">Congratulations! With
+              this method you have now confirmed that the nitrosamine impurities in your samples are well below the
+              currently required by regulatory expectations.</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-12 col-xl-6"
+            style="padding-right: 30px;padding-top: 0;padding-bottom: 0;padding-left: 0;">
+            <div class="row" style="padding-bottom: 20px;margin: 0;">
+              <div class="col d-flex justify-content-between align-items-center"
+                style="margin-top: 10px;padding-left: 0px;padding-right: 0px;height: 100px;margin-left: 30px;border-bottom: 3px solid #97999C;">
+                <div class="d-flex align-items-center"><img class="d-inline-block" src="assets/img/Group%20223.png"
+                    style="width: 50px;">
+                  <h5 style="margin-bottom: 0px;margin-left: 20px;font-family: HelveticaNeueBold;color: #00677F;">Sample
+                    Preparation</h5>
+                </div><img src="assets/img/Path%20359.png" style="width: 25px;">
+              </div>
+            </div>
+            <div class="row" style="margin: 0;">
+              <div class="col col-12 col-md-6" style="padding-left: 45px;">
+                <ul style="padding: 0px;padding-left: 10px;">
+                  <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Thermo Scientific™
+                    Digital Vortex Mixers</li>
+                  <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Item Thermo Scientific™
+                    Nunc™ 15mL and 50mL Conical Sterile Polypropylene Centrifuge Tubes</li>
+                  <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Thermo Scientific™ Lab
+                    Shakers</li>
+                  <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Thermo Scientific™ Pro
+                    Centrifuge Series</li>
+                  <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Thermo Scientific™ Lab
+                    Furnaces and Hot Air Oven</li>
+                  <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Thermo Scientific™ Lab
+                    Refrigerators and Freezers</li>
+                  <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Thermo Scientific™
+                    Screw Top HPLC Vials</li>
+                  <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Fisherbrand™ Class A
+                    Volumetric Flask and Glasswares</li>
+                </ul>
+              </div>
+              <div class="col col-12 col-md-6" style="padding-left: 45px;">
+                <ul style="padding: 0px;padding-left: 10px;">
+                  <li style="font-family: HelveticaNeueBold;color: #54585A;margin-bottom: 10px;">Thermo Scientific™
+                    Titan3™ PVDF 0.2 µm Syringe Filters</li>
+                  <li style="font-family: HelveticaNeueBold;color: #54585A;margin-bottom: 10px;">Thermo Scientific™
+                    Finntip™ Pipette Tips</li>
+                  <li style="font-family: HelveticaNeueBold;color: #54585A;margin-bottom: 10px;">Thermo Scientific™
+                    Precision™ General Purpose Baths</li>
+                  <li style="font-family: HelveticaNeueBold;color: #54585A;margin-bottom: 10px;">Thermo Scientific™
+                    Nalgene™ Bottles</li>
+                  <li style="font-family: HelveticaNeueBold;color: #54585A;margin-bottom: 10px;">Thermo Scientific™
+                    Water Purification System</li>
+                  <li style="font-family: HelveticaNeueBold;color: #54585A;margin-bottom: 10px;">Fisher Chemical™
+                    Optima™ LCMS grade Acetonitrile, Water, Methanol, Formic Acid</li>
+                  <li style="font-family: HelveticaNeueBold;color: #54585A;margin-bottom: 10px;">Thermo Scientific™
+                    Finnpipette™ Pipettes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col col-12 col-xl-6">
+            <div class="row">
+              <div class="col col-12 col-md-6"
+                style="padding-right: 30px;padding-left: 30px;padding-top: 0;padding-bottom: 0;">
+                <div class="row" style="padding-bottom: 20px;margin: 0;">
+                  <div class="col d-flex justify-content-between align-items-center"
+                    style="margin-top: 10px;padding-left: 0;padding-right: 0px;height:100px;border-bottom: 3px solid #97999C;">
+                    <div class="d-flex align-items-center"><img class="img-fluid" src="assets/img/Group%20222.png"
+                        style="width: 50px;">
+                      <h5 style="margin-bottom: 0px;margin-left: 20px;font-family: HelveticaNeueBold;color: #00677F;">
+                        Sample Separation &amp; Detection</h5>
+                    </div><img src="assets/img/Path%20359.png" style="width: 25px;">
+                  </div>
+                </div>
+                <div class="row" style="margin: 0;padding-bottom: 0;">
+                  <div class="col col-12">
+                    <ul style="padding: 0px;padding-left: 10px;">
+                      <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Fisher Chemical™
+                        Optima™ LCMS grade Acetonitrile, Water, Methanol, Formic Acid</li>
+                      <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Thermo Scientific™
+                        Vanquish™ Flex System</li>
+                      <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Thermo Scientific™
+                        TSQ Series Triple Quadrupole Mass Spectrometer</li>
+                      <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Thermo Scientific™
+                        Acclaim™ Reverse Phase 120 C18 Columns</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-12 col-md-6"
+                style="padding-right: 30px;padding-bottom: 0;padding-top: 0;padding-left: 30px;">
+                <div class="row" style="padding-bottom: 20px;margin: 0;">
+                  <div class="col d-flex justify-content-between align-items-center"
+                    style="margin-top: 10px;padding-left: 0;padding-right: 0px;height: 100px;border-bottom: 3px solid #97999C;">
+                    <div class="d-flex align-items-center"><img class="img-fluid" src="assets/img/Group%20224.png"
+                        style="width: 50px;">
+                      <h5 style="margin-bottom: 0px;margin-left: 20px;font-family: HelveticaNeueBold;color: #00677F;">
+                        Data Analysis &amp; Interpretation</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" style="margin: 0;padding-bottom: 0;">
+                  <div class="col col-12">
+                    <ul style="padding: 0px;padding-left: 10px;">
+                      <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Thermo Scientific™
+                        Chromeleon™ Chromatography Data System (CDS) Software</li>
+                      <li style="color: #54585A;font-family: HelveticaNeueBold;margin-bottom: 10px;">Thermo Scientific™
+                        TraceFinder™</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          <!-- <div id="preloader_screen" class="preloader-screen">
+        <div class="div-block-2">
+          <div class="div-block"><img src="images/preloader.gif" alt="" class="image">
+            <div id="loading_percentage" class="text-block">0%</div>
+          </div>
+        </div>
+      </div> -->
+
+    <!--overlay page-->
+
+    <div id="overlay_pg">
+      <div class="container-fluid" id="btns_div">
+        <div class="row">
+          <div id="thank_you" class="col-8 offset-2"
+            style="font-family:HelveticaNeueBold; margin-top:25px; font-size: 1.5rem; color:#E71316; text-align: center; margin-bottom: 20px;">
+            Thank you for your time. We hope you have enjoyed this experience.</div>
+        </div>
+        <div class="row">
+          <div class="col-10 offset-1 col-sm-4 offset-sm-4 overlay_btn" style="text-align: center;padding: 15px;"
+            style="font-size: 1.1rem;">
+            <div id="learn_more_btn">Explore More </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class=" col-10 offset-1 col-sm-4 offset-sm-4 overlay_btn" style="text-align: center;padding: 15px;"
+            style="font-size: 1.1rem;">
+            <div id="restart_btn">Restart Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Footer Navbar-->
+    <nav id="footer_div" class="navbar navbar-dark navbar-expand-md fixed-bottom"
+      style="background: #E71316;height: 50px;padding: 0px;padding-right: 10px;">
+      <div class="container-fluid"><a id="logo_btn" class="navbar-brand"
+          style="background: #EBEBEC;padding: 10px 27px;margin-right: 0px;"><img id="brand_icon"
+            src="assets/img/Thermofisher Logo.svg"> </a>
+            <p class="d-inline-flex float-left align-items-center navbar-text" id="mod_name_foot"
+            style="background: #E71316; color: #FFFFFF;font-size: 14px;font-family: HelveticaNeue;text-align: left;height: 50px; width: 245px;">
+            <span style="border-right: 1px solid #f5797b; margin-left: 10px; line-height: 17px;">Identification and Quantification of Nitrosamine impurities</span>
+            </p><button data-toggle="collapse"
+          class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+            class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse d-flex justify-content-between" id="navcol-1">
+          <ul class="navbar-nav">
+            <li class="nav-item" id="home" style="text-align: left;height: 50px;"><a
+                class="nav-link active d-inline-flex align-items-center"
+                style="color: #FFFFFF;height: 50px;text-align: left;padding: 20px;"><img src="assets/img/Home.svg"
+                  style="padding-right: 0;padding-left: 0;font-size: 13px;height: 24px;text-align: left;width: 24px;"></a>
+            </li>
+            <li class="nav-item" id="button_overview" style="text-align: left;height: 50px;"><a href="#"
+                class="nav-link d-inline-flex align-items-center"
+                style="color: #FFFFFF;font-size: 14px;font-family: HelveticaNeue;height: 50px;text-align: left;padding: 20px;">Overview<br></a>
+            </li>
+            <li class="nav-item" id="button_SamplePrep" style="text-align: left;height: 50px;"><a href="#"
+                class="nav-link d-inline-flex align-items-center"
+                style="color: #FFFFFF;font-size: 14px;font-family: HelveticaNeue;height: 50px;text-align: left;padding: 20px;">Sample
+                preparation</a></li>
+            <li class="nav-item" id="button_SamplePrepAndDetec" style="text-align: left;height: 50px;"><a href="#"
+                class="nav-link d-inline-flex align-items-center"
+                style="color: #FFFFFF;font-size: 14px;font-family: HelveticaNeue;height: 50px;text-align: left;padding: 20px;">Separation ​and detection</a></li>
+            <li class="nav-item" id="button_DataAnalysis" style="text-align: left;height: 50px;"><a href="#"
+                class="nav-link d-inline-flex align-items-center"
+                style="color: #FFFFFF;font-size: 14px;font-family: HelveticaNeue;padding: 20px;height: 50px;">Data
+                analysis and interpretation</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/side-menu.js"></script>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+p {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.hotspot {
+  margin: 2px;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 24%;
+}
+
+.blue_dot {
+  background-image: url("../../assets/img/Group%20197.png");
+}
+
+.red_dot {
+  background-image: url("../../assets/img/Group%20197-1.png");
+}
+
+.dot {
+  background-size: cover;
+  width: 37px;
+  height: 37px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-48%, 0%);
+  top: 150%;
+}
+
+.hotspot_info {
+  font-family: HelveticaNeueLTW1G-Bd;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 10px;
+  color: #FFFFFF;
+  text-align: center;
+  width: 441px;
+  border-radius: 55px;
+}
+
+.blue_hotspot {
+  background: #00677f;
+}
+
+.red_hotspot {
+  background: #E71316;
+}
+
+.blue_hotspot:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-left: 4px dashed #00677f;
+  height: 70%;
+}
+
+.red_hotspot:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  border-left: 4px dashed #E71316;
+  height: 70%;
+}
+
+.instruction_info {
+  font-family: HelveticaNeueLTW1G-Bd;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 10px;
+  color: #FFFFFF;
+  text-align: center;
+  width: 300px;
+  border-radius: 55px;
+  background: #54585A;
+}
+
+.arrow {
+  background-size: cover;
+  background-image: url("../../assets/img/Group%20191.png");
+  width: 35px;
+  height: 48px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-48%, 0%);
+  top: 115%;
+}
+

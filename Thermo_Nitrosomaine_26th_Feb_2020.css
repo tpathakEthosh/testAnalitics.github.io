@@ -1,0 +1,1880 @@
+/* __V3D_TEMPLATE__ - template-based file; delete this line to prevent this file from being updated */
+
+body {
+    margin: 0px;
+    overflow: hidden;
+    /* font-family: "HelveticaNeueLTW1G"; */
+}
+
+a:focus,button:hover, button:focus, a:hover{
+  outline: none !important;
+}
+
+#v3d-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#fullscreen_button{
+  visibility: hidden;
+}
+
+.fullscreen-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    background-size: 100% 100%;
+    display: none;
+    z-index: 1;
+}
+
+#volume_btn{
+  position: absolute;
+    top: 15px;
+    cursor: pointer;
+    background-size: 100% 100%;
+     display: none;
+    z-index: 1;
+    background-image: url("assets/img/vol_on.svg");
+}
+
+@media (min-width: 1024px) {
+  #volume_btn{
+      right: 60px;
+      width: 25px;
+      height: 25px;
+  }
+  
+  .fullscreen-button{
+    width: 25px;
+    height: 25px;
+  }
+  }
+  
+  @media (min-width: 1440px) {
+  #volume_btn{
+    right: 65px;
+    width: 30px;
+    height: 30px;
+  }
+  .fullscreen-button{
+  width: 30px;
+  height: 30px;
+  }
+  }
+
+.btns{
+  display: flex;
+  align-items: center;
+}
+.button_label {
+    background-color: #ec5252;
+    border: none;
+    color: white;
+    padding: 10px!important;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 20px;
+    cursor: pointer;
+    width: 170px;
+    height: 66px; 
+    margin-right: 10px; 
+  }
+  
+  /* .button_SamplePrep {
+    background-color: #ec5252;
+    border: none;
+    color: white;
+  
+    text-align: overflow;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100px;
+    height: 35px;
+   
+  }
+  .button_SamplePrepAndDetec{
+    background-color: #ec5252;
+    border: none;
+    color: white;
+ 
+    text-align: overflow;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100px;
+    height: 35px;
+  
+  }
+  .button_DataAnalysis{
+    background-color: #ec5252;
+    border: none;
+    color: white;
+  
+    text-align: overflow;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100px;
+    height: 35px;
+  
+  } */
+.fullscreen-open {
+    background-image: url('assets/img/full_on.svg');
+}
+
+.fullscreen-close {
+    background-image: url('assets/img/full_off.svg');
+}
+
+p {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+/* Labels CSS*/
+
+.hotspot {
+  margin: 2px;
+  display: inline-block;
+  position: absolute;
+}
+
+.hotspot_info {
+  font-family: "HelveticaNeueMedium";
+  font-size: 12px;
+  padding: 7px 10px;
+  color: #FFFFFF;
+  background: #00677f;
+  text-align: center;
+  border-radius: 3px;
+  border-bottom: 2px solid #9BD3DD;
+}
+
+.dashLines {
+  content: "";
+  position: relative;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  transform: translate(0%, 0%);
+  border-left: 1px solid #686868;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: swoop 3s infinite;
+  animation-direction: reverse;
+  animation-timing-function: cubic-bezier(0.71, 0.13, 1, 0.71);
+  background-color: #00677f;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+@keyframes swoop {
+  0% {
+    box-shadow: inset 0 0 0 0 #00677f, inset 0 0 0 0 white;
+ }
+  50% {
+    box-shadow: inset 0 0 0 0 #00677f, inset 0 0 0 15px white;
+ }
+  100% {
+    box-shadow: inset 0 0 0 15px #00677f, inset 0 0 0 15px white;
+ }
+}
+
+#Drug_label_dash{
+  height: 60px;
+}
+#Drug_label{
+  width: 110px;
+  left: -55px !important;
+  top: -140px !important;
+}
+
+#Substance_label_dash{
+  height: 60px;
+}
+#Substance_label{
+  width: 96px;
+  left: -50px !important;
+  top: -140px !important;
+}
+
+#Nunc_label_dash{
+  height: 60px;
+}
+#Nunc_label{
+  width: 138px;
+  left: -69px !important;
+  top: -184px !important;
+}
+
+#Drug_label_dash_v21{
+  height: 125px;
+  border-top: 1px solid #686868;
+  left: -48%;
+  border-right: 1px solid #686868;
+  border-left: none;
+}
+#Drug_label_v21{
+  width: 142px;
+  left: -71px !important;
+  top: -164px !important;
+}
+
+#Substance_label_dash_v21{
+  height: 25px;
+  border-top: 1px solid #686868;
+  left: -48%;
+  border-right: 1px solid #686868;
+  border-left: none;
+}
+#Substance_label_v21{
+  width: 96px;
+  left: -48px !important;
+  top: -63px !important;
+}
+
+#Blank_label_dash{
+  height: 71px;
+  border-top: 1px solid #686868;
+  left: -48%;
+  border-right: 1px solid #686868;
+  border-left: none;
+}
+#Blank_label{
+  width: 104px;
+  left: -52px !important;
+  top: -110px !important;
+}
+
+#Finnpipette_label_dash{
+  height: 50px;
+}
+#Finnpipette_label {
+  width: 152px;
+  left: -80px !important;
+  top: -155px !important;
+}
+
+@media (min-width:300px)and (orientation : landscape) {
+#Finnpipette_label_dash{
+  height: 5px;
+}
+#Finnpipette_label {
+    width: 152px;
+    left: -80px !important;
+    top: -107px !important;
+}
+}
+
+#Digital_label_dash{
+  height: 50px;
+}
+#Digital_label {
+  width: 130px;
+  left: -65px !important;
+  top: -140px !important;
+}
+
+#Orbital_label_dash{
+  height: 80px;
+}
+#Orbital_label {
+  width: 184px;
+  left: -92px !important;
+  top: -180px !important;
+}
+
+#Centrifuge_label_dash{
+  height: 50px;
+}
+#Centrifuge_label {
+  width: 140px;
+  left: -70px !important;
+  top: -159px !important;
+}
+
+#Titan_label_dash{
+  height: 80px;
+}
+#Titan_label {
+  width: 172px;
+  left: -86px !important;
+  top: -180px !important;
+}
+@media (min-width:300px)and (orientation : landscape) {
+  #Vanquish_label_dash{
+    height: 25px;
+  }
+  #Vanquish_label {
+    width: 196px;
+    left: -98px !important;
+    top: -120px !important;
+  }
+
+  #Quantis_label_dash{
+    height: 25px;
+  }
+  #Quantis_label {
+    width: 232px;
+    left: -116px !important;
+    top: -150px !important;
+  }
+
+  #Chromeleon_label_dash{
+    height: 25px;
+  }
+  #Chromeleon_label {
+    width: 182px;
+    left: -91px !important;
+    top: -145px !important;
+  }
+}
+
+@media (min-width:300px)and (orientation : portrait) {
+  #Vanquish_label_dash{
+    height: 115px;
+  }
+  #Vanquish_label {
+    width: 130px;
+    left: -65px !important;
+    top: -220px !important;
+  }
+  
+  #Quantis_label_dash{
+    height: 70px;
+  }
+  #Quantis_label {
+    width: 178px;
+    left: -89px !important;
+    top: -190px !important;
+  }
+  
+  #Chromeleon_label_dash{
+    height: 30px;
+  }
+  #Chromeleon_label {
+    width: 130px;
+    left: -65px !important;
+    top: -145px !important;
+  }
+}
+
+#Mobile_label_dash{
+  border-top: 1px solid #686868;
+  left: -48%;
+  border-right: 1px solid #686868;
+  border-left: none;
+}
+#Mobile_label {
+  width: 94px;
+  left: -80px !important;
+  top: 3px !important;
+}
+#Mobile_label .dot{
+  margin-top: -8px;
+  left: 57%;
+}
+
+#Substance_label_dash_v31{
+  height: 65px;
+  border-top: 1px solid #686868;
+  left: -48%;
+  border-right: 1px solid #686868;
+  border-left: none;
+}
+#Substance_label_v31{
+  width: 114px;
+  left: -57px !important;
+  top: -97px !important;
+}
+
+#Blank_label_dash_v2{
+  height: 80px;
+}
+#Blank_label_v2{
+  width: 52px;
+  left: -26px !important;
+  top: -144px !important;
+}
+
+#Standard_label_dash{
+  height: 65px;
+  border-top: 1px solid #686868;
+  left: -48%;
+  border-right: 1px solid #686868;
+  border-left: none;
+}
+#Standard_label{
+  width: 84px;
+  left: -42px !important;
+  top: -97px !important;
+}
+
+#Drug_label_dash_v3{
+  height: 100px;
+}
+#Drug_label_v3{
+  width: 96px;
+  left: -48px !important;
+  top: -164px !important;
+}
+
+@media (min-width: 1024px) {
+  .hotspot_info {
+    font-size: 15px;
+    padding: 13px 15px;
+  }
+
+  .dashLines {
+    border-left: 1px solid #686868;
+  }
+  
+  .dot {
+    width: 15px;
+    height: 15px;
+  }
+
+  #Drug_label_dash{
+    height: 60px;
+  }
+  #Drug_label{
+    width: 142px;
+    left: -66px !important;
+    top: -143px !important;
+  }
+
+  #Substance_label_dash{
+    height: 60px;
+  }
+  #Substance_label{
+    width: 124px;
+    left: -67px !important;
+    top: -143px !important;
+  }
+
+  #Nunc_label_dash{
+    height: 100px;
+  }
+  #Nunc_label{
+    width: 306px;
+    left: -153px !important;
+    top: -205px !important;
+  }
+
+  #Drug_label_dash_v21{
+    height: 230px;
+    border-top: 1px solid #686868;
+    left: -48%;
+    border-right: 1px solid #686868;
+    border-left: none;
+  }
+  #Drug_label_v21{
+    width: 142px;
+    left: -75px !important;
+    top: -265px !important;
+  }
+
+  #Substance_label_dash_v21{
+    height: 80px;
+    border-top: 1px solid #686868;
+    left: -48%;
+    border-right: 1px solid #686868;
+    border-left: none;
+  }
+  #Substance_label_v21{
+    width: 124px;
+    left: -68px !important;
+    top: -115px !important;
+  }
+
+  #Blank_label_dash{
+    height: 150px;
+    border-top: 1px solid #686868;
+    left: -48%;
+    border-right: 1px solid #686868;
+    border-left: none;
+  }
+  #Blank_label{
+    width: 104px;
+    left: -57px !important;
+    top: -185px !important;
+  }
+
+  #Finnpipette_label_dash{
+    height: 50px;
+  }
+  #Finnpipette_label {
+    width: 264px;
+    left: -132px !important;
+    top: -165px !important;
+  }
+
+  #Digital_label_dash{
+    height: 50px;
+  }
+  #Digital_label {
+    width: 166px;
+    left: -83px !important;
+    top: -175px !important;
+  }
+
+  #Orbital_label_dash{
+    height: 80px;
+  }
+  #Orbital_label {
+    width: 236px;
+    left: -118px !important;
+    top: -185px !important;
+  }
+
+  #Centrifuge_label_dash{
+    height: 80px;
+  }
+  #Centrifuge_label {
+    width: 196px;
+    left: -98px !important;
+    top: -185px !important;
+  }
+
+  #Titan_label_dash{
+    height: 80px;
+  }
+  #Titan_label {
+    width: 220px;
+    left: -110px !important;
+    top: -190px !important;
+  }
+
+  #Vanquish_label_dash{
+    height: 50px;
+  }
+  #Vanquish_label {
+    width: 250px;
+    left: -125px !important;
+    top: -155px !important;
+  }
+
+  #Quantis_label_dash{
+    height: 50px;
+  }
+  #Quantis_label {
+    width: 294px;
+    left: -147px !important;
+    top: -155px !important;
+  }
+
+  #Chromeleon_label_dash{
+    height: 50px;
+  }
+  #Chromeleon_label {
+    width: 232px;
+    left: -116px !important;
+    top: -155px !important;
+  }
+
+  #Mobile_label_dash{
+    border-top: 1px solid #686868;
+    left: -48%;
+    border-right: 1px solid #686868;
+    border-left: none;
+  }
+  #Mobile_label {
+    width: 152px;
+    left: -118px !important;
+    top: -24px !important
+  }
+  #Mobile_label .dot{
+    margin-top: -10px;
+    left: 57%;
+  }
+
+  #Substance_label_dash_v31{
+    height: 65px;
+    border-top: 1px solid #686868;
+    left: -48%;
+    border-right:1px solid #686868;
+    border-left: none;
+  }
+  #Substance_label_v31{
+    width: 142px;
+    left: -71px !important;
+    top: -100px !important;
+  }
+
+  #Blank_label_dash_v2{
+    height: 80px;
+  }
+  #Blank_label_v2{
+    width: 104px;
+    left: -52px !important;
+    top: -163px !important;
+  }
+
+  #Standard_label_dash{
+    height: 65px;
+    border-top: 1px solid #686868;
+    left: -48%;
+    border-right:1px solid #686868;
+    border-left: none;
+  }
+  #Standard_label{
+    width: 142px;
+    left: -71px !important;
+    top: -100px !important;
+  }
+
+  #Drug_label_dash_v3{
+    height: 100px;
+  }
+  #Drug_label_v3{
+    width: 142px;
+    left: -71px !important;
+    top: -183px !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hotspot_info {
+    font-size: 22px;
+    padding: 13px 15px;
+  }
+
+  .dashLines {
+    border-left: 1px solid #686868;
+  }
+  
+  .dot {
+    width: 25px;
+    height: 25px;
+  }
+
+  #Drug_label_dash{
+    height: 100px;
+  }
+  #Drug_label{
+    width: 194px;
+    left: -91px !important;
+    top: -209px !important;
+  }
+
+  #Substance_label_dash{
+    height: 100px;
+  }
+  #Substance_label{
+    width: 168px;
+    left: -89px !important;
+    top: -209px !important;
+  }
+
+  #Nunc_label_dash{
+    height: 100px;
+  }
+  #Nunc_label{
+    width: 354px;
+    left: -180px !important;
+    top: -280px !important;
+  }
+
+  #Drug_label_dash_v21{
+    height: 230px;
+    border-top:1px solid #686868;
+    left: -48%;
+    border-right:1px solid #686868;
+    border-left: none;
+  }
+  #Drug_label_v21{
+    width: 194px;
+    left: -102px !important;
+    top: -275px !important;
+  }
+
+  #Substance_label_dash_v21{
+    height: 80px;
+    border-top: 1px solid #686868;
+    left: -48%;
+    border-right: 1px solid #686868;
+    border-left: none;
+  }
+  #Substance_label_v21{
+    width: 168px;
+    left: -91px !important;
+    top: -125px !important;
+  }
+
+  #Blank_label_dash{
+    height: 150px;
+    border-top:1px solid #686868;
+    left: -48%;
+    border-right: 1px solid #686868;
+    border-left: none;
+  }
+  #Blank_label{
+    width: 104px;
+    left: -56px !important;
+    top: -195px !important;
+  }
+
+  #Finnpipette_label_dash{
+    height: 50px;
+  }
+  #Finnpipette_label {
+    width: 374px;
+    left: -187px !important;
+    top: -207px !important;
+  }
+
+  #Digital_label_dash{
+    height: 80px;
+  }
+  #Digital_label {
+    width: 230px;
+    left: -115px !important;
+    top: -250px !important;
+  }
+
+  #Orbital_label_dash{
+    height: 100px;
+  }
+  #Orbital_label {
+    width: 330px;
+    left: -155px !important;
+    top: -237px !important;
+  }
+
+  #Centrifuge_label_dash{
+    height: 100px;
+  }
+  #Centrifuge_label {
+    width: 250px;
+    left: -125px !important;
+    top: -237px !important;
+  }
+
+  #Titan_label_dash{
+    height: 80px;
+  }
+  #Titan_label {
+    width: 308px;
+    left: -154px !important;
+    top: -227px !important;
+  }
+
+  #Vanquish_label_dash{
+    height: 50px;
+  }
+  #Vanquish_label {
+    width: 352px;
+    left: -176px !important;
+    top: -187px !important;
+  }
+
+  #Quantis_label_dash{
+    height: 50px;
+  }
+  #Quantis_label {
+    width: 416px;
+    left: -208px !important;
+    top: -190px !important;
+  }
+
+  #Chromeleon_label_dash{
+    height: 50px;
+  }
+  #Chromeleon_label {
+    width: 324px;
+    left: -162px !important;
+    top: -187px !important;
+  }
+
+  #Mobile_label_dash{
+    border-top:1px solid #686868;
+    left: -48%;
+    border-right:1px solid #686868;
+    border-left: none;
+  }
+  #Mobile_label {
+    width: 205px;
+    left: -147px !important;
+    top: -30px !important;
+  }
+  #Mobile_label .dot{
+    margin-top: -14px;
+    left: 57%;
+  }
+
+  #Substance_label_dash_v31{
+    height: 65px;
+    border-top:1px solid #686868;
+    left: -48%;
+    border-right:1px solid #686868;
+    border-left: none;
+  }
+  #Substance_label_v31{
+    width: 210px;
+    left: -105px !important;
+    top: -110px !important;
+  }
+
+  #Blank_label_dash_v2{
+    height: 105px;
+  }
+  #Blank_label_v2{
+    width: 104px;
+    left: -52px !important;
+    top: -209px !important;
+  }
+
+  #Standard_label_dash{
+    height: 65px;
+    border-top: 1px solid #686868;
+    left: -48%;
+    border-right: 1px solid #686868;
+    border-left: none;
+  }
+  #Standard_label{
+    width: 200px;
+    left: -100px !important;
+    top: -110px !important;
+  }
+
+  #Drug_label_dash_v3{
+    height: 105px;
+  }
+  #Drug_label_v3{
+    width: 168px;
+    left: -84px !important;
+    top: -209px !important;
+  }
+}
+
+
+/* Instructions */
+
+.instruction_info {
+  font-family: "HelveticaNeueLight";
+  font-size: 12px;
+  padding: 7px 10px;
+  color: #333333;
+  text-align: center;
+  background: #FFFFFF;
+  margin-bottom: 5px;
+  border-bottom: 3px solid #E71316;
+  border-radius: 3px;
+}
+
+.inst_SingleLine{
+  position: absolute;
+}
+
+.dashLines_inst {
+  content: "";
+  position: relative;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-top: 5px;
+  border-left: 3px dotted #FFFFFF;
+  height: 50px;
+}
+
+.arrow {
+  background-image: url("assets/img/Monoweight\ Chevron\ Down.svg");
+  width: 17px;
+  background-size: cover;
+  display: inline-block;
+  padding: 5px;
+  position: relative;
+  left: 50%;
+  transform: translate(-42%, 0px);
+  animation: MoveUpDown 1s linear infinite;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 5px;
+  }
+}
+
+@keyframes MoveLeftRight {
+  0%, 100% {
+    left: 0;
+  }
+  50% {
+    left: 5px;
+  }
+}
+
+#vial_instruction{
+  width: 96px;
+  left: -50px !important;
+  top: -150px !important;
+}
+
+#finnpipette_instruction .dashLines_inst {
+height: 10px;
+}
+
+#finnpipette_instruction{
+  width: 124px;
+  left: -64px !important;
+  top: -106px !important;
+}
+
+#product_instruction{
+  width: 144px;
+  left: -72px !important;
+  top: -144px !important;
+}
+
+#shaker_instruction{
+  width: 96px;
+  left: -48px !important;
+  top: -174px !important;
+}
+
+#syringe_instruction{
+  width: 118px;
+  left: -62px !important;
+  top: -125px !important;
+}
+@media (min-width:300px)and (orientation : portrait) {
+  #autosampler_instruction{
+    width: 102px;
+    left: -29% !important;
+    top: -31px !important;
+    display: flex;
+  }
+}
+
+@media (min-width:300px)and (orientation : landscape) {
+  #autosampler_instruction{
+    width: 102px;
+    left: -29% !important;
+    top: -31px !important;
+    display: flex;
+  }
+}
+#autosampler_instruction .dashLines_inst{
+  height: 3px;
+  width: 20px;
+  border-top: 3px dotted #FFFFFF;
+  position: absolute;
+  top: 34%;
+  left: 100%;
+  margin-left: 3px;
+}
+#autosampler_instruction .arrow {
+  padding: 5px;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  animation: MoveLeftRight 1s linear infinite;
+}
+#animate{
+  position: absolute;
+  top: 23%;
+  left: 115%;
+}
+
+
+@media (min-width: 1024px) {
+
+  .instruction_info {
+    font-size: 15px;
+    margin-bottom: -5px; 
+    padding: 13px 15px; 
+    line-height: 18px;
+  }
+
+  .dashLines_inst {
+    border-left: 2px dotted #FFFFFF;
+    height: 50px;
+  }
+  
+  .arrow {
+    width: 20px;
+    padding: 6px;
+  }
+
+  #vial_instruction{
+    width: 126px;
+    left: -66px !important;
+    top: -149px  !important;
+  }
+
+  #finnpipette_instruction .dashLines_inst {
+    height: 30px;
+    }
+  #finnpipette_instruction{
+    width: 160px;
+    left: -84px !important;
+    top: -129px !important;
+  }
+
+  #product_instruction{
+    width: 184px;
+    left: -93px !important;
+    top: -150px !important;
+  }
+
+  #shaker_instruction{
+    width: 184px;
+    left: -98px !important;
+    top: -139px !important;
+  }
+
+  #syringe_instruction{
+    width: 152px;
+    left: -79px !important;
+    top: -131px !important;
+  }
+
+  #autosampler_instruction{
+    width: 125px;
+    left: -220px !important;
+    top: -36px !important;
+    display: flex;
+  }
+  #autosampler_instruction .dashLines_inst{
+    height: 3px;
+    width: 60px;
+    border-top: 3px dotted #FFFFFF;
+    position: absolute;
+    top: 45%;
+    left: 100%;
+    margin-left: 5px;
+  }
+  #autosampler_instruction .arrow {
+    padding: 6px;
+    width: 19px;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    animation: MoveLeftRight 1s linear infinite;
+  }
+  #animate{
+    position: absolute;
+    top: 37%;
+    left: 149%;
+  }
+
+}
+
+@media (min-width: 1440px) {
+
+  .instruction_info {
+    font-size: 22px;
+    line-height: 26px;
+    padding: 13px 15px; 
+    margin-bottom: -5px; 
+    border-bottom: 4px solid #E71316; 
+  }
+
+  .dashLines_inst {
+    border-left: 3px dotted #FFFFFF;
+    height: 80px;
+  }
+  
+  .arrow {
+    width: 27px;
+    padding: 8px;
+  }
+
+  #vial_instruction{
+    width: 168px;
+    left: -89px !important;
+    top: -196px !important;
+  }
+
+  #finnpipette_instruction .dashLines_inst {
+    height: 50px;
+    }
+  #finnpipette_instruction{
+    width: 220px;
+    left: -115px !important;
+    top: -166px !important;
+  }
+
+  #product_instruction{
+    width: 254px;
+    left: -131px !important;
+    top: -200px !important;
+  }
+
+  #shaker_instruction{
+    width: 254px;
+    left: -133px !important;
+    top: -186px !important;
+  }
+
+  #syringe_instruction{
+    width: 208px;
+    left: -110px !important;
+    top: -175px !important;
+  }
+
+  #autosampler_instruction{
+    width: 178px;
+    left: -292px !important;
+    top: -47px !important;
+    display: flex;
+  }
+  #autosampler_instruction .dashLines_inst{
+    height: 3px;
+    width: 80px;
+    border-top: 3px dotted #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: 5px;
+  }
+  #autosampler_instruction .arrow {
+    padding: 7px;
+    width: 23px;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    animation: MoveLeftRight 1s linear infinite;
+  }
+  #animate{
+    position: absolute;
+    top: 44%;
+    left: 144%;
+
+  }
+
+}
+
+/*Gradient Labels CSS*/
+#Vanquish_description, #Chromeleon_description{
+  position: absolute;
+  left: -95px !important;
+  top: -124px !important;
+  visibility: hidden;
+}
+.gradientLabel{
+  font-family: "HelveticaNeueMedium";
+  display: flex;
+  padding:7px;
+  width: 190px;
+  margin-bottom:2px;
+  background-color: #FFFFFF;
+  font-size: 10px;
+  color: #333333;
+}
+
+.gradientLabel p{
+  padding-left: 7px !important;
+  line-height: 19px;
+}
+.gradientLabel img{
+  width: 20px;
+}
+.label_heading{
+  font-family: "HelveticaNeueMedium";
+  padding:7px 10px;
+  width: 190px;
+  margin-bottom:2px;
+  background-color: #E71316;
+  font-size: 10px;
+  color: #FFFFFF;
+}
+
+@media (min-width: 1024px) {
+  #Vanquish_description, #Chromeleon_description{
+    left: -155px !important;
+    top: -179px !important;
+  }
+  .gradientLabel{
+    padding:10px;
+    width: 310px;
+    font-size: 16px;
+  }
+  
+  .gradientLabel p{
+    padding-left: 15px !important;
+    line-height: 30px;
+  }
+  .gradientLabel img{
+    width: 30px;
+  }
+  .label_heading{
+    padding:10px 20px;
+    width: 310px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #Vanquish_description, #Chromeleon_description{
+    left: -185px !important;
+    top: -231px !important;
+  }
+  .gradientLabel{
+    padding:15px;
+    width: 369px;
+    font-size: 18px;
+  }
+  
+  .gradientLabel p{
+    padding-left: 15px !important;
+    line-height: 33px;
+  }
+  .gradientLabel img{
+    width: 35px;
+  }
+  .label_heading{
+    padding:15px 25px;
+    width: 369px;
+    font-size: 18px;
+  }
+}
+
+
+/*Acknowledgement Labels CSS*/
+.ack_labels{
+  background: #FFFFFF;
+  border-left: 1px solid #B5BD00;
+  font-family: "HelveticaNeueLight";
+  color: #54585A;
+  font-size: 12px;
+  line-height: 34px;
+  font-weight: 500;
+  display: inline-flex;
+  position: absolute;
+  visibility: hidden;
+}
+
+.ack_labels p{
+  padding: 10px !important;
+}
+.ack_labels img{
+  padding: 10px;
+  width: 46px;
+  background-color: #B5BD00;
+}
+
+#mixing_ack_label{
+  left:-74px !important;
+  top: -23px !important;
+}
+#transfer_ack_label{
+  left:-78px !important;
+  top: -23px !important;
+}
+#homogenized_ack_label{
+  left:-94px !important;
+  top: -23px !important;
+}
+#Autosampler_ack_label{
+  left:-82px !important;
+  top: -23px !important;
+}
+
+@media (min-width: 1024px) {
+  .ack_labels{
+    font-size: 16px;
+    line-height: 31px;
+  }
+
+  #mixing_ack_label{
+    left:-90px !important;
+    top: -26px !important;
+  }
+  #transfer_ack_label{
+    left:-95px !important;
+    top: -26px !important;
+  }
+  #homogenized_ack_label{
+    left:-115px !important;
+    top: -26px !important;
+  }
+  #Autosampler_ack_label{
+    left:-103px !important;
+    top: -26px !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .ack_labels{
+    font-size: 22px;
+    line-height: 36px;
+  }
+
+  .ack_labels p{
+    padding: 20px !important;
+  }
+  .ack_labels img{
+    width: 60px;
+    background-color: #B5BD00;
+  }
+
+  #mixing_ack_label{
+    left:-128px !important;
+    top: -38px !important;
+  }
+  #transfer_ack_label{
+    left:-135px !important;
+    top: -38px !important;
+  }
+  #homogenized_ack_label{
+    left:-163px !important;
+    top: -38px !important;
+  }
+  #Autosampler_ack_label{
+    left:-146px !important;
+    top: -38px !important;
+  }
+}
+
+
+/*Start Page CSS*/
+#startPage{
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #logo img, #L_logo img{
+    max-width: 300px !important;
+  }
+  }
+
+.equal_spacing {
+  padding-top: 4%;
+}
+
+@media (max-width: 1366px) {
+  .equal_spacing {
+    padding-top: 2%;
+  }
+}
+
+#wrapper {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 576px) {
+  #wrapper h1 {
+    font-size: 36px !important;
+  }
+}
+@media (max-width: 576px) {
+  h3, #start_experience_btn {
+    font-size: 20px !important;
+  }
+}
+
+/*Loading Page CSS */
+#LoadingPage{
+  /* background: rgba(84,88,90, 0.80); */
+  background-image: url("assets/img/bg.png");
+  background-size: cover;
+  font-size: 20px;
+  font-family: "HelveticaNeue";
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  /* display: none !important; */
+}
+
+#content{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+.text_block{
+  display: inline-flex;
+  background-color: white;
+}
+
+/* .div-block-2 {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  bottom:50%
+}
+.text-block {
+  position: static;
+  display: block;
+  overflow: hidden;
+  height: auto;
+  margin-top: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: Rubik, sans-serif;
+  color: #ebb62f;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+} */
+/* #L_logo {
+  margin-top: 3em;
+}
+#LoadingPage #L_logo {
+  margin-top: 5em;
+}
+
+#Loading-txt{ 
+  font-size: 26px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+/*Footer */
+
+.container-fluid {
+  padding: 0px !important;
+}
+
+#side-menu {
+  background-color: #FFFFFF !important;
+  text-align: left;
+}
+
+#side-menu .nav-item {
+  border-bottom: 1px solid #54585A;
+}
+
+#side-menu .nav-link {
+  padding: 25px 0px !important;
+  color: #54585A !important;
+  font-weight: unset;
+}
+
+
+  #brand_icon {
+    width: 96px;
+    height: auto;
+  }
+
+
+@media (max-width: 768px) {
+  #mod_name_foot {
+    display: none !important;
+  }
+}
+
+
+  #footer_div .nav-link, #mod_name_foot{
+    font-size: 10px !important;
+  }
+  #footer_div .nav-link{
+    padding: 10px !important;
+  }
+
+@media (min-width:1250px){
+  #footer_div .nav-link, #mod_name_foot{
+    font-size: 12px !important;
+  }
+  #footer_div .nav-link{
+    padding: 12px !important;
+  }
+  
+}
+
+@media (min-width:1440px){
+  #footer_div .nav-link, #mod_name_foot{
+    font-size: 16px !important;
+    line-height: 20px;
+  }  
+}
+
+.close {
+  font-size: 36px;
+  font-weight: 400;
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
+#side-menu #home {
+  position: absolute;
+  left: 20px;
+  bottom: 0px !important;
+  padding: 0px;
+  margin: 0px;
+  border-bottom: none;
+}
+
+#side-menu #home img {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+#back{
+  width: 100%;
+  height: 58px;
+  background:#555759;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+#side-menu .close{
+  color: #ffffff !important;
+  opacity: 1;
+}
+#menu-logo{
+  width: 96px;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+#footer_div{
+  display: none;
+}
+
+/*Product page and Overlay page*/
+li::marker {
+  color: #E71316;
+}
+
+#product_pg, #overlay_pg {
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+
+#product_pg{
+  background: #FFFFFF;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding:0px 50px;
+  overflow-y:auto;
+}
+
+#product_pg .container-fluid{
+  margin-bottom: 50px;
+}
+
+#product_pg li{
+  color: #54585A;
+  font-family: HelveticaNeueBold;
+  font-size: 1rem;
+}
+
+@media (min-width: 1024px) {
+  #product_pg li{
+    font-size: 0.8rem !important;
+    margin-bottom: 7px !important;
+  }
+  #product_pg h5, .overlay_btn{
+    font-size: 1.1rem !important;
+  }
+  #product_pg h1, #thank_you{
+    font-size: 1.2rem !important;
+  }
+} 
+
+@media (min-width: 1440px) {
+  #product_pg li{
+    font-size: 1rem !important;
+  }
+  #product_pg h5, .overlay_btn{
+    font-size: 1.25rem !important;
+  }
+  #product_pg h1, #thank_you{
+    font-size: 1.5rem !important;
+  }
+}
+@media (min-width: 1700px) {
+  #product_pg li{
+    font-size: 1.25rem !important;
+  }
+  #product_pg h5, .overlay_btn{
+    font-size: 1.6rem !important;
+  }
+  #product_pg h1, #thank_you{
+    font-size: 1.8rem !important;
+  }
+}
+#overlay_pg {
+  background-color: #FFFFFF;
+  background-size: cover;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#btns_div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#learn_more_btn, #restart_btn{
+  color: #FFFFFF;
+  background: #e71316;
+  border-style: none;
+  border-radius: 0PX;
+  font-family: HelveticaNeueMedium;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #E71316;
+  margin-bottom: 20px;
+  font-size: 22px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#learn_more_btn:hover, #restart_btn:hover{
+  background: #FFFFFF;
+  color: #E71316;
+  border: 2px solid #E71316;
+  }
+
+  @media (min-width: 1024px) {
+    #learn_more_btn, #restart_btn{
+      font-size: 30px;
+      width: 100% !important;
+      margin-bottom: 25px;
+    }
+  }
+  @media (min-width: 1440px) {
+    #learn_more_btn, #restart_btn{
+      font-size: 36px;
+      width: 79% !important;
+      margin-bottom: 25px;
+    }
+    #thank_you{
+      font-size: 2.25rem;
+
+    }
+  }   
+
+
+/* Badges */
+
+#text_Loading{
+  font-size: 1.2rem;
+  font-family: "HelveticaNeueLight";
+  color: #000;
+  text-align: center;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+}
+
+ .text_block img{
+   height: 170px;
+  }
+
+  .text_block p{
+    padding: 25px !important;
+    font-size: 22px;
+    font-family: "HelveticaNeueLight";
+  }
+
+  @media (min-width: 1024px) {
+    .text_block{
+      width: 450px;
+      height: 178px;
+    }
+    .text_block img{
+     height: 178px;
+     position: absolute;
+     right: 0px;
+    }
+    .text_block p{
+      font-size: 22px;
+      line-height: 24px;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    #text_Loading{
+      font-size: 1.5rem;
+    }
+    #begin_btn{
+      font-size: 1.5rem;
+    }
+    .text_block{
+      width: 550px;
+      height: 210px;
+    }
+    .text_block img{
+      height: 210px;
+      position: absolute;
+      right: 0px;
+     }
+    .text_block p{
+      font-size: 32px;
+      line-height: 36px;
+    }
+  }
+
+
+
+/* Hourglass */
+
+.clock{  
+  background: white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  box-shadow: inset 0 0 0 .25rem #aaa;
+  flex-direction: column;
+  animation: clock 5s ease-in-out infinite;
+  position: absolute;
+}
+
+#hourglass{
+  position: relative;
+  left: 50%;
+  transform: translate(-2%, 0%);
+  height: 100px;
+}
+
+.cup{
+  background: #aaa; 
+  height: 30%;
+  width: 30%;
+  border-radius: 50% 50% 0 0/ 100% 100% 0 0;
+  overflow: hidden;
+}
+
+.top{
+  transform: rotate(180deg)  ;
+}
+
+.sand{
+  background: #555;
+  height: 150%;
+  width: 150%;
+  transform-origin: 0% 0%;
+  animation: sand 5s linear infinite -2.5s;
+}
+
+.delayed{
+  animation-delay: 0s; 
+}
+
+
+@keyframes clock{
+  0%{
+    transform: rotate(0deg)
+  }
+  25%,50%{
+    transform: rotate(180deg)
+  }
+  75%{
+    transform: rotate(360deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes sand{
+  0%,100%{
+    border-radius: 5%;
+    transform: translate(35%,20%) rotate(45deg);
+  }
+  15%{
+    border-radius:40%;
+    transform: translate(0%,35%) rotate(-65deg) scale(1.5,1.5);
+  }
+  25%{
+    border-radius:20%;
+    transform: translate(-15%,35%) rotate(-90deg) scale(1.2,1.2);
+  }
+  50%{
+    border-radius:5%;
+    transform: translate(0%,0%) rotate(-90deg) scale(1,1);
+    opacity: 1;
+  }
+  50.01%,64.99%{
+    opacity: 0;
+  }
+  65%{
+    border-radius:35%;
+    transform: translate(20%,50%) rotate(30deg);
+    opacity: 1;    
+  }
+  75%{
+    border-radius:10%;
+    transform: translate(35%,40%) rotate(45deg);
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .clock{  
+    height: 75px;
+    width: 75px;
+  }
+  #hourglass{
+      height: 125px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .clock{  
+    height: 100px;
+    width: 100px;
+  }
+  #hourglass{
+    height: 150px;
+  }
+}
+  
+/* removes tap blinking on ios devices */
+* { -webkit-tap-highlight-color:rgba(0,0,0,0); }
+
+/* Table label */
+#begin_btn{
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #e71316;
+  border: 1px solid #ec5252;
+  padding: 10px 28px;
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  visibility: hidden;
+  cursor: pointer;
+  font-family: "HelveticaNeue";
+}
+
+@media (min-width: 1400px) {
+  #begin_btn{
+    font-size: 1.5rem;
+  }
+}

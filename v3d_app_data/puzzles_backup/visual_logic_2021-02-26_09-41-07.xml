@@ -1,0 +1,30 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="981.5" scrolly="500.5" scale="0.9"></tab>
+  <tab name="main" type="MainTab" active="true" scrollx="1013.7222290039062" scrolly="506.05555725097656" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="appendScene" id="0_gi(B?|G2yPl18?AZl|" x="-990" y="-490">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" enableonprogress="false" enableonerror="false" loadcameras="false" loadlights="false" enablealias="false"></mutation>
+      <value name="URL">
+        <shadow type="text" id="F-+kM`epyII]O$_543Xl">
+          <field name="TEXT">Models/Thermo_Lab_Camera_and_Locator.gltf</field>
+        </shadow>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="appendScene" id="z?CG0YgVV=6Cn9q[$=j," x="-990" y="-390">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" enableonprogress="false" enableonerror="false" loadcameras="false" loadlights="false" enablealias="false"></mutation>
+      <value name="URL">
+        <shadow type="text" id="?0z6u)-3|5}~jSqvUsq/">
+          <field name="TEXT">Models/Thermo_Lab_Instruments.gltf</field>
+        </shadow>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="appendScene" id="A7uhlV+g9aoE^9#`ib8{" x="-970" y="-250">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" enableonprogress="false" enableonerror="false" loadcameras="false" loadlights="false" enablealias="false"></mutation>
+      <value name="URL">
+        <shadow type="text" id="_88=Jqnh}3)0}s21#*sZ">
+          <field name="TEXT">Models/Thermo_Lab_Locator.gltf</field>
+        </shadow>
+      </value>
+    </block>
+  </tab>
+  <editorsettings viewport-x="1261.8" viewport-y="28" viewport-w="853.2" viewport-h="538" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>
