@@ -10258,7 +10258,7 @@
                                           <value name="TEXT">
                                             <shadow type="textMultiline" id="9bAc=.zYPxJ%(,Fy$MJ:">
                                               <field name="HIGHLIGHT_MODE">javascript</field>
-                                              <field name="TEXT">console.log("Testing google analytics api's");&#10;_gaq.push(['_trackEvent', 'button', 'clicked']);</field>
+                                              <field name="TEXT">console.log("Testing google analytics api's");&#10;</field>
                                             </shadow>
                                           </value>
                                         </block>
