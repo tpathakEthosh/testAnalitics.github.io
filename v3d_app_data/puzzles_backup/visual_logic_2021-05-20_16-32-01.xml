@@ -7999,7 +7999,7 @@
       </value>
     </block>
   </tab>
-  <tab name="samplePrep" type="SecondaryTab" active="true" scrollx="392.30119127486523" scrolly="-170.84297260175663" scale="0.8812617491728708">
+  <tab name="samplePrep" type="SecondaryTab" active="true" scrollx="413.6532138847472" scrolly="-25.213983407244996" scale="0.6866706803217517">
     <variables xmlns="https://developers.google.com/blockly/xml">
       <variable id="B70IRhhsS]tZTGEIfNWr" type="">playFinpippete</variable>
       <variable id="u#.)NxWO2U6JBzP$EkAd" type="">playLabshakerAnim</variable>
@@ -10258,7 +10258,7 @@
                                           <value name="TEXT">
                                             <shadow type="textMultiline" id="9bAc=.zYPxJ%(,Fy$MJ:">
                                               <field name="HIGHLIGHT_MODE">javascript</field>
-                                              <field name="TEXT">console.log("Testing google analytics api's");&#10;var _gaq = _gaq || [];&#10;_gaq.push(['_trackEvent', 'button', 'clicked']);&#10;console.log("After push event...");&#10;(function() {&#10;        var ga = document.createElement('script');&#10;        ga.type = 'text/javascript';&#10;        ga.async = true;&#10;        console.log("In function...");&#10;        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')&#10;                      + '.google-analytics.com/ga.js';&#10;        var s = document.getElementsByTagName('script')[0];&#10;        s.parentNode.insertBefore(ga, s);&#10;      })();</field>
+                                              <field name="TEXT">console.log("Testing google analytics api's");&#10;var _gaq = _gaq || [];&#10;_gaq.push(['_trackEvent', 'button', 'clicked']);&#10;console.log("After push event...");&#10;(function() {&#10;        var ga = document.createElement('script');&#10;        ga.type = 'text/javascript';&#10;        ga.async = true;&#10;        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')&#10;                      + '.google-analytics.com/ga.js';&#10;        var s = document.getElementsByTagName('script')[0];&#10;        s.parentNode.insertBefore(ga, s);&#10;      })();</field>
                                             </shadow>
                                           </value>
                                         </block>
